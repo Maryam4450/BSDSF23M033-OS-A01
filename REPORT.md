@@ -1,4 +1,4 @@
-1. **Linking Rule in the Makefile**  
+#1.**Linking Rule in the Makefile**  
 The rule:  
         $(TARGET): $(OBJECTS)  
 
@@ -17,7 +17,7 @@ $(TARGET): $(OBJECTS)
 -lm links the external math library, not just the object files you compiled yourself.  
 ----
 
-2.**Git Tags**  
+#2.**Git Tags**  
 => What is a git tag?  
 1. A git tag is a reference to a specific commit in the repository’s history.  
 2. It is used to mark important points (like a release version v1.0.0).  
@@ -32,11 +32,12 @@ $(TARGET): $(OBJECTS)
 **Simple tag:** Just a name pointing directly to a commit,no extra information.  
 *git tag v1.0*  
 
-**Annotated tag:** Stores additional metadata (tagger name, date, message, and can be signed), more permanent and preferred for official releases.  
-*git tag -a v1.0 -m 'First release'*  
+**Annotated tag:** Stores additional metadata  more permanent and preferred for official releases.  
+*git tag -a v1.0 -m 'First release'*
+
 ---
 
-3. **GitHub Releases**    
+#3.**GitHub Releases**    
 => Purpose of creating a Release:  
 1. A Release on GitHub is a way to package and share a specific version of your project, usually tied to a git tag (like v1.0.0).  
 2. Releases are helpful for developers and users because they represent stable snapshots of your project.  
@@ -46,5 +47,6 @@ $(TARGET): $(OBJECTS)
 1. Attaching binaries makes it easy for end-users to download and run the program without having to build from source.  
 2. Ensures consistency as everyone using the release gets the exact same binary, saves time for non-developers who just want to use the software.  
 ---
+
 
 

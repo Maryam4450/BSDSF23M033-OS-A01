@@ -1,4 +1,4 @@
-##Feature-2: Multi-file Project using Make Utility  
+**Feature-2: Multi-file Project using Make Utility**  
 
 1.**Linking Rule in the Makefile**  
 The rule:  
@@ -50,6 +50,7 @@ $(TARGET): $(OBJECTS)
 1. Attaching binaries makes it easy for end-users to download and run the program without having to build from source.  
 2. Ensures consistency as everyone using the release gets the exact same binary, saves time for non-developers who just want to use the software.  
 ---
+
 
 
 

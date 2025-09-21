@@ -50,7 +50,7 @@ $(TARGET): $(OBJECTS)
 1. Attaching binaries makes it easy for end-users to download and run the program without having to build from source.  
 2. Ensures consistency as everyone using the release gets the exact same binary, saves time for non-developers who just want to use the software.  
 ---
-                     Feature-3                   
+                     Feature-3 : Creating and using Static Library                
 ---
 1. **Compare Makefile Part 2 vs Part 3**
 => Part 2 (multi-file):
@@ -86,8 +86,9 @@ We did not see the symbol mystrlen as an unresolved external.Instead, the functi
 3. The downside is larger executable size, but the advantage is independence from external library files.
 
 ---
-                   Feature 4
+                   Feature 4 : Creating and using Dynamic Library
 ---
+
 
 
 

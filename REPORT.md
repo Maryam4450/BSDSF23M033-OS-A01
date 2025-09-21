@@ -1,5 +1,5 @@
 ---
-        **Feature-2: Multi-file Project using Make Utility**  
+        Feature-2: Multi-file Project using Make Utility
 ---
 
 1.**Linking Rule in the Makefile**  
@@ -90,6 +90,7 @@ We did not see the symbol mystrlen as an unresolved external.Instead, the functi
 ---
                    Feature 4 : Creating and using Dynamic Library
 ---
+
 
 
 

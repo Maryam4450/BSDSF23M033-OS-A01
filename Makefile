@@ -1,6 +1,7 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Iinclude -Wall
+CFLAGS = -Iinclude -fPIC
+LDFLAGS = -Llib -lmyutils
 
 # Directories
 SRC_DIR = src
@@ -10,27 +11,31 @@ LIB_DIR = lib
 
 # Files
 OBJECTS = $(OBJ_DIR)/mystrfunctions.o $(OBJ_DIR)/myfilefunctions.o
-LIBRARY = $(LIB_DIR)/libmyutils.a
-TARGET = $(BIN_DIR)/client_static
+MAIN = $(OBJ_DIR)/main.o
+LIBRARY = $(LIB_DIR)/libmyutils.so
+TARGET = $(BIN_DIR)/client_dynamic
+
+# Ensure directories exist
+$(shell mkdir -p $(OBJ_DIR) $(BIN_DIR) $(LIB_DIR))
 
 # Default target
 all: $(TARGET)
-
-# Build the final executable by linking with the static library
-$(TARGET): $(OBJ_DIR)/main.o $(LIBRARY)
-	$(CC) $(OBJ_DIR)/main.o -L$(LIB_DIR) -lmyutils -o $(TARGET)
-
-# Build the static library
-$(LIBRARY): $(OBJECTS)
-	ar rcs $(LIBRARY) $(OBJECTS)
 
 # Compile object files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Utility targets
+# Build shared library
+$(LIBRARY): $(OBJECTS)
+	$(CC) -shared -o $@ $(OBJECTS)
+
+# Link main with shared library
+$(TARGET): $(MAIN) $(LIBRARY)
+	$(CC) $(MAIN) -L$(LIB_DIR) -lmyutils -o $(TARGET)
+
+# Clean
 clean:
-	rm -f $(OBJ_DIR)/*.o $(TARGET) $(LIBRARY)
+	rm -f $(OBJ_DIR)/*.o $(LIB_DIR)/*.so $(BIN_DIR)/*
 
 .PHONY: all clean
 

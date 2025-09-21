@@ -56,17 +56,17 @@ $(TARGET): $(OBJECTS)
 1. Directly compiles multiple .c files into .o object files.
 2. Links these .o files together with the main program to build the executable.
 
-=> Part 3 (Static library build):
+=> Part 3 (Static library build):  
 1. First compiles .c files into .o files.
 2. Then archives these .o files into a static library (lib/libmyutils.a) using ar.
 3. The main program links against this library instead of linking all .o files individually.
 
-=> Key Difference:
+=> Key Difference:  
 Part 2 links object files directly.
 Part 3 links via a static library (.a), making the build modular and scalable.
 
 ---
-2. **Purpose of the ar Command and ranlib**
+2. **Purpose of the ar Command and ranlib**  
 => ar command:
 Used to create static libraries (.a files) from object files.This bundles multiple .o files into one library.
 => ranlib command:
@@ -75,12 +75,13 @@ Used to create static libraries (.a files) from object files.This bundles multip
 3. On some systems, ar rcs already does this, but ranlib is often run to ensure portability.
 
 ---
-3.**Symbols in nm client_static and Static Linking**
+3.**Symbols in nm client_static and Static Linking**  
 We did not see the symbol mystrlen as an unresolved external.Instead, the function code is already included (inlined) into the final executable during the linking process.
 =>
-What this tells us:
+What this tells us:  
 1. Static linking copies function code from the library into the final executable. 
 2. This makes the executable self-contained (it doesn’t need the library at runtime).
 3. The downside is larger executable size, but the advantage is independence from external library files.
 
 ---
+

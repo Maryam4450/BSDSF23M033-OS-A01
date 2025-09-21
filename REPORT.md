@@ -78,12 +78,13 @@ Used to create static libraries (.a files) from object files.This bundles multip
 ---
 3.**Symbols in nm client_static and Static Linking**  
 We did not see the symbol mystrlen as an unresolved external.Instead, the function code is already included (inlined) into the final executable during the linking process.
-=>
-What this tells us:  
+
+=>What this tells us:   
 1. Static linking copies function code from the library into the final executable. 
 2. This makes the executable self-contained (it doesn’t need the library at runtime).
 3. The downside is larger executable size, but the advantage is independence from external library files.
 
 ---
+
 
 

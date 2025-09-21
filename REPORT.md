@@ -1,5 +1,5 @@
 ---
-        Feature 2 : Multi-file Project using Make Utility
+                          Feature 2 : Multi-file Project using Make Utility
 ---
 
 1.**Linking Rule in the Makefile**  
@@ -91,10 +91,24 @@ We did not see the symbol mystrlen as an unresolved external.Instead, the functi
                    Feature 4 : Creating and using Dynamic Library
 ---
 
+1. **Position-Independent Code (-fPIC)**
+   i.  -fPIC generates code that can execute at any memory address.
+   ii. Essential for shared libraries because the same library can be loaded into multiple processes at different            addresses.  
+---
 
+2. **Difference in File Size (Static vs Dynamic)**
+   i. `client_static` includes all library code inside the executable → larger file.  
+  ii. `client_dynamic` does not include library code → smaller executable.
+ iii.  Dynamic linking reduces executable size and allows multiple programs to share the same library in memory
 
+-----
 
+3. **LD_LIBRARY_PATH**
+  i. Environment variable that tells the OS where to look for shared libraries at runtime.  
+ ii. Necessary because the OS loader cannot find `libmyutils.so` in standard library paths.   
+iii. This shows that **dynamic linking relies on the loader to locate libraries at runtime**, unlike static linking       where the code is copied into the executable.  
 
+---
 
 
 

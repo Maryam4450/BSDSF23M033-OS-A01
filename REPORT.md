@@ -66,10 +66,11 @@ Part 2 links object files directly.
 Part 3 links via a static library (.a), making the build modular and scalable.
 
 ---
-2. **Purpose of the ar Command and ranlib**  
-=> ar command:
-Used to create static libraries (.a files) from object files.This bundles multiple .o files into one library.
-=> ranlib command:
+2. **Purpose of the ar Command and ranlib**   
+=> ar command:  
+Used to create static libraries (.a files) from object files.This bundles multiple .o files into one library.  
+ 
+=> ranlib command:  
 1. Generates an index (symbol table) inside the static library.
 2. This index allows the linker to quickly find which object file contains a required symbol.
 3. On some systems, ar rcs already does this, but ranlib is often run to ensure portability.
@@ -84,4 +85,5 @@ What this tells us:
 3. The downside is larger executable size, but the advantage is independence from external library files.
 
 ---
+
 

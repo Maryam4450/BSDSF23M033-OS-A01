@@ -1,0 +1,13 @@
+groff
+.TH WORDCOUNT 3 "21 September 2025" "Version 0.4.1" "Library Functions"
+.SH NAME
+wordCount \- Counts lines, words, and characters in a file
+.SH SYNOPSIS
+int wordCount(FILE *file, int *lines, int *words, int *chars);
+.SH DESCRIPTION
+wordCount reads the file pointed to by `file` and counts the number of lines, words,
+and characters. The results are stored in the integers pointed to by `lines`, `words`,
+and `chars`. Returns 0 on success, -1 on failure.
+.SH AUTHOR
+Maryam Majid  <your_email@example.com>
+
